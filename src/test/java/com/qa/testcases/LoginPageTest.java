@@ -8,16 +8,15 @@ import com.qa.pages.HomePage;
 import com.qa.pages.LoginPage;
 import com.qa.testbase.TestBase;
 
-public class FreeCRMTestCases extends TestBase{
+public class LoginPageTest extends TestBase{
 	
 	LoginPage loginpage;
 	HomePage homepage;
 	
 	
-	public FreeCRMTestCases(){
+	public LoginPageTest(){
 		super();
 	}
-	
 	
 	@BeforeMethod
 	public void setup(){
@@ -35,7 +34,8 @@ public class FreeCRMTestCases extends TestBase{
 	@Test(priority=2)
 	public void LoginPageTitleTest(){
 		String title=loginpage.ValidateLoginPageTitle();
-		Assert.assertEquals(title, "CRMPRO  - CRM software for customer relationship management, sales, and support");
+		Assert.assertEquals(title, "CRMPRO  - CRM software for customer relationship management, sales, and support", 
+				"LoginPage title is not matched");
 	}
 	
 	@Test(priority=3)
